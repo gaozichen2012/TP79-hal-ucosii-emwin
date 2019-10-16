@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"tp79-hal-ucosii-emwin\startup_stm32f103xe.o"
+"tp79-hal-ucosii-emwin\main.o"
+"tp79-hal-ucosii-emwin\gpio.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_it.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_msp.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_gpio_ex.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_tim.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_tim_ex.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_rcc.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_rcc_ex.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_gpio.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_dma.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_cortex.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_pwr.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_flash.o"
+"tp79-hal-ucosii-emwin\stm32f1xx_hal_flash_ex.o"
+"tp79-hal-ucosii-emwin\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "TP79-hal-ucosii-emwin\TP79-hal-ucosii-emwin.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "TP79-hal-ucosii-emwin.map" -o TP79-hal-ucosii-emwin\TP79-hal-ucosii-emwin.axf
