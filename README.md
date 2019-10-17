@@ -1,2 +1,19 @@
-# TP79-hal-ucosii-emwin
- 使用TP79机器测试STM32F103的hal库+UCOSII+emWin
+# 项目简介
+在TP79上测试STM32的hal库+UCOSII+emWin
+
+# 硬件平台
+芯片：STM32F103VE
+通信模块：移远EC20
+显示屏尺寸：160*128
+
+# 使用工具
+STM32cubeMX：ST公司官方工具，以图形化界面配置STM32的驱动
+MDK 5：编译&下载
+
+# 项目记录
+## 2019.10.16
+新建项目，使用STM32cubeMX一键配置，测试LED闪烁正常
+
+## 2019.10.17
+新加显示屏驱动，显示图片正常
+
