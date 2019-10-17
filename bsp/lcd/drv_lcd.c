@@ -1,17 +1,14 @@
-/*TP79的lcd驱动芯片为ILI9163，398的lcd驱动ST7735
- *
- *
+/*
+ *显示屏驱动
+ *只有app_lcd.c可以调用
+ *TP79的lcd驱动芯片为ILI9163，398的lcd驱动ST7735
  *
  */
 
 #define DRV_LCD_ENABLE
 #include "drv_lcd.h"
 
-
-#define	LCD_SEND_DAT8(x)	LCD_DATA_GPIO_Port->ODR=(LCD_DATA_GPIO_Port->ODR&0x00ff)|(((x)<<8)&0xff00)
-
-
-static void drv_lcd_set_display_range(u16 x,u16 y,u16 width,u16 height);
+#define	LCD_SEND_DAT8(x)	LCD_DATA_GPIO_Port->ODR=(LCD_DATA_GPIO_Port->ODR&0x00ff)|(((x)<<8)&0xff00) //data引脚1-8用来传输数据
 
 static void lcd_cs_control(on_off_t states);
 static void lcd_wr_control(on_off_t states);
@@ -21,9 +18,6 @@ static void lcd_rst_control(on_off_t states);
 
 static void lcd_delay_ms(u32 ms);
 static void lcd_reset(void);
-static void lcd_write_cmd8(u8 cmd);
-static void lcd_write_dat8(u8 cmd);
-static void lcd_write_dat16(u16 Data);
 
 static void lcd_cs_control(on_off_t states)
 {
@@ -85,7 +79,7 @@ static void lcd_reset(void)
 }
 
 /* 8080时序 */
-static void lcd_write_cmd8(u8 cmd) 
+void lcd_write_cmd8(u8 cmd) 
 {
 	lcd_rd_control(ON);//禁止读
 	lcd_cs_control(OFF);//使能
@@ -97,7 +91,7 @@ static void lcd_write_cmd8(u8 cmd)
 }
 
 /* 8080时序 */
-static void lcd_write_dat8(u8 cmd) 
+void lcd_write_dat8(u8 cmd) 
 {
 	lcd_rd_control(ON);//禁止读
 	lcd_cs_control(OFF);//使能
@@ -108,7 +102,7 @@ static void lcd_write_dat8(u8 cmd)
 	lcd_cs_control(ON);
 }
 
-static void lcd_write_dat16(u16 Data)
+void lcd_write_dat16(u16 Data)
 {
 	lcd_rd_control(ON);//禁止读
 	lcd_cs_control(OFF);  //使能
@@ -257,7 +251,7 @@ void drv_lcd_sleep_out(void)
 	lcd_delay_ms(120);
 }
 
-static void drv_lcd_set_display_range(u16 x,u16 y,u16 width,u16 height)
+void drv_lcd_set_display_range(u16 x,u16 y,u16 width,u16 height)
 {
 	lcd_write_cmd8(0x2a);    //定义X地址的开始及结束位置
 	lcd_write_dat8(x/256);
@@ -271,90 +265,4 @@ static void drv_lcd_set_display_range(u16 x,u16 y,u16 width,u16 height)
 	lcd_write_dat8((y+height)/256);	
 	lcd_write_dat8((y+height)%256);  
 }
-
-/*设置底色*/
-void drv_lcd_color_clear(u8 x,u8 y, u16 colorData, u8 width, u8 height)
-{
-	int i,j;
-	drv_lcd_set_display_range(x,y,width-1,height-1);
-	lcd_write_cmd8(0x2c);  	//以下开始数据传输
-	for(i=0;i<height;i++)
-	{
-		for(j = 0; j < width; j++)
-		{
-			lcd_write_dat16(colorData);
-		}
-	}
-}
-
-#if 1 //显示数组中的图片 
-void drv_lcd_display_bmp(u8 x,u8 y,const u16 *bmp,u8 width, u8 height)
-{
-  u8 i,j;
-  u16 temp;
-  drv_lcd_set_display_range(x,y,width-1,height-1);
-  lcd_write_dat8(0x2c);  	//以下开始数据传输
-
-  for(i=0; i<height; i++)
-  {
-    for(j = 0; j < width; j++)
-    {
-      temp = *(bmp+(height-i-1)*width+j);
-      temp = (temp >> 8) + (temp << 8);
-      lcd_write_dat16(temp);
-    }
-  }
-}
-
-/*显示图片函数：透明背景*/
-void drv_lcd_display_bmp_with_empty_background(u8 x,u8 y,const u8 *bmp,u8 width, u8 height,u16 back_color)
-{
-	u8 i,j;
-	drv_lcd_set_display_range(x,y,width-1,height-1);
-	lcd_write_cmd8(0x2c);  	//以下开始数据传输
-	
-	for(i=0;i<height;i++)
-	{			
-		for(j = 0; j < width; j++)
-		{
-			if(*(bmp) == 0xff && *(bmp+1) == 0xff)
-			{
-				bmp++;
-				lcd_write_dat8(back_color>>8); 
-				bmp++;
-				lcd_write_dat8(back_color);  				
-			}
-			else
-			{
-				lcd_write_dat8(*(bmp++)); 
-				lcd_write_dat8(*(bmp++));  
-			}
-		}
-	}		
-}
-#else //显示bin文件中的图片
-void drv_lcd_display_bmp(u8 x,u8 y,const u8 *bmp,u8 width, u8 height)
-{
-	u8 i,j;
-	drv_lcd_set_display_range(x,y,width-1,height-1);
-	lcd_write_cmd8(0x2c);  	//以下开始数据传输
-	
-	for(i=0;i<height;i++)
-	{			
-		for(j = 0; j < width; j++)
-		{
-			lcd_rd_control(ON);  //禁止读
-			lcd_cs_control(OFF);  //使能
-			lcd_rs_control(ON); //写数据
-			LCD_SEND_DAT8(*(bmp++));  //发送数据高8位
-			lcd_wr_control(OFF);     //写时序
-			lcd_wr_control(ON); 	
-			LCD_SEND_DAT8(*(bmp++));  //发送数据低8位	
-			lcd_wr_control(OFF);     //写时序
-			lcd_wr_control(ON); 		
-			lcd_cs_control(ON); 
-		}
-	}
-}
-#endif
 

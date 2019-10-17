@@ -7,8 +7,8 @@
 显示屏尺寸：160*128
 
 ## 使用工具
-STM32cubeMX：ST公司官方工具，以图形化界面配置STM32的驱动
-MDK 5：编译&下载
+* STM32cubeMX：ST公司官方工具，以图形化界面配置STM32的驱动
+* MDK 5：编译&下载
 ## 注意事项
 * 显示的图片是用Img2Lcd生成的数组，Img2Lcd工具参数配置见下图：
 ![Img2Lcd工具参数截图](https://raw.githubusercontent.com/gaozichen2012/TP79-hal-ucosii-emwin/master/Image2Lcd%E8%BD%AF%E4%BB%B6%E6%88%AA%E5%9B%BE.png)

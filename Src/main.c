@@ -2687,9 +2687,13 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 		HAL_GPIO_TogglePin(LED_RED_GPIO_Port,LED_RED_Pin);
-		lcd_display_bmp_with_empty_background(0,0,start_bmp,160,128,COLOR_WIGHT);
+		lcd_display_bmp(0,0,start_bmp,160,128);
+		lcd_display_y_line(5,15,25,5,COLOR_NAVYBLUE);
+		lcd_display_x_line(15,15,25,5,COLOR_NAVYBLUE);
 		HAL_Delay(500);
 		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port,LED_GREEN_Pin);
+		lcd_display_y_line(35,45,55,5,COLOR_NAVYBLUE);
+		lcd_display_x_line(45,45,55,5,COLOR_NAVYBLUE);
 		HAL_Delay(500);
   }
   /* USER CODE END 3 */

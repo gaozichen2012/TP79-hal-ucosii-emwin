@@ -26,6 +26,9 @@ Section Cross References
     main.o(i.main) refers to app_lcd.o(i.lcd_init) for lcd_init
     main.o(i.main) refers to app_lcd.o(i.lcd_display_bmp_with_empty_background) for lcd_display_bmp_with_empty_background
     main.o(i.main) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
+    main.o(i.main) refers to app_lcd.o(i.lcd_display_bmp) for lcd_display_bmp
+    main.o(i.main) refers to app_lcd.o(i.lcd_display_y_line) for lcd_display_y_line
+    main.o(i.main) refers to app_lcd.o(i.lcd_display_x_line) for lcd_display_x_line
     main.o(i.main) refers to stm32f1xx_hal.o(i.HAL_Delay) for HAL_Delay
     main.o(i.main) refers to main.o(.constdata) for .constdata
     gpio.o(i.MX_GPIO_Init) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
@@ -123,23 +126,26 @@ Section Cross References
     stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
     system_stm32f1xx.o(i.SystemCoreClockUpdate) refers to system_stm32f1xx.o(.data) for .data
     system_stm32f1xx.o(i.SystemCoreClockUpdate) refers to system_stm32f1xx.o(.constdata) for .constdata
-    app_lcd.o(i.lcd_color_clear) refers to drv_lcd.o(i.drv_lcd_color_clear) for drv_lcd_color_clear
-    app_lcd.o(i.lcd_display_bmp) refers to drv_lcd.o(i.drv_lcd_display_bmp) for drv_lcd_display_bmp
-    app_lcd.o(i.lcd_display_bmp_with_empty_background) refers to drv_lcd.o(i.drv_lcd_display_bmp_with_empty_background) for drv_lcd_display_bmp_with_empty_background
+    app_lcd.o(i.lcd_color_clear) refers to drv_lcd.o(i.drv_lcd_set_display_range) for drv_lcd_set_display_range
+    app_lcd.o(i.lcd_color_clear) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
+    app_lcd.o(i.lcd_color_clear) refers to drv_lcd.o(i.lcd_write_dat16) for lcd_write_dat16
+    app_lcd.o(i.lcd_display_bmp) refers to drv_lcd.o(i.drv_lcd_set_display_range) for drv_lcd_set_display_range
+    app_lcd.o(i.lcd_display_bmp) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
+    app_lcd.o(i.lcd_display_bmp) refers to drv_lcd.o(i.lcd_write_dat8) for lcd_write_dat8
+    app_lcd.o(i.lcd_display_bmp_with_empty_background) refers to drv_lcd.o(i.drv_lcd_set_display_range) for drv_lcd_set_display_range
+    app_lcd.o(i.lcd_display_bmp_with_empty_background) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
+    app_lcd.o(i.lcd_display_bmp_with_empty_background) refers to drv_lcd.o(i.lcd_write_dat8) for lcd_write_dat8
+    app_lcd.o(i.lcd_display_x_line) refers to drv_lcd.o(i.drv_lcd_set_display_range) for drv_lcd_set_display_range
+    app_lcd.o(i.lcd_display_x_line) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
+    app_lcd.o(i.lcd_display_x_line) refers to drv_lcd.o(i.lcd_write_dat16) for lcd_write_dat16
+    app_lcd.o(i.lcd_display_y_line) refers to drv_lcd.o(i.drv_lcd_set_display_range) for drv_lcd_set_display_range
+    app_lcd.o(i.lcd_display_y_line) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
+    app_lcd.o(i.lcd_display_y_line) refers to drv_lcd.o(i.lcd_write_dat16) for lcd_write_dat16
     app_lcd.o(i.lcd_init) refers to drv_lcd.o(i.drv_lcd_init) for drv_lcd_init
     app_lcd.o(i.lcd_init) refers to drv_lcd.o(i.drv_lcd_display_control) for drv_lcd_display_control
     app_lcd.o(i.lcd_init) refers to drv_lcd.o(i.drv_lcd_backlight_control) for drv_lcd_backlight_control
     app_lcd.o(i.lcd_init) refers to app_lcd.o(i.lcd_color_clear) for lcd_color_clear
     drv_lcd.o(i.drv_lcd_backlight_control) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
-    drv_lcd.o(i.drv_lcd_color_clear) refers to drv_lcd.o(i.drv_lcd_set_display_range) for drv_lcd_set_display_range
-    drv_lcd.o(i.drv_lcd_color_clear) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
-    drv_lcd.o(i.drv_lcd_color_clear) refers to drv_lcd.o(i.lcd_write_dat16) for lcd_write_dat16
-    drv_lcd.o(i.drv_lcd_display_bmp) refers to drv_lcd.o(i.drv_lcd_set_display_range) for drv_lcd_set_display_range
-    drv_lcd.o(i.drv_lcd_display_bmp) refers to drv_lcd.o(i.lcd_write_dat8) for lcd_write_dat8
-    drv_lcd.o(i.drv_lcd_display_bmp) refers to drv_lcd.o(i.lcd_write_dat16) for lcd_write_dat16
-    drv_lcd.o(i.drv_lcd_display_bmp_with_empty_background) refers to drv_lcd.o(i.drv_lcd_set_display_range) for drv_lcd_set_display_range
-    drv_lcd.o(i.drv_lcd_display_bmp_with_empty_background) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
-    drv_lcd.o(i.drv_lcd_display_bmp_with_empty_background) refers to drv_lcd.o(i.lcd_write_dat8) for lcd_write_dat8
     drv_lcd.o(i.drv_lcd_display_control) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
     drv_lcd.o(i.drv_lcd_init) refers to drv_lcd.o(i.lcd_rst_control) for lcd_rst_control
     drv_lcd.o(i.drv_lcd_init) refers to drv_lcd.o(i.lcd_delay_ms) for lcd_delay_ms
@@ -147,6 +153,8 @@ Section Cross References
     drv_lcd.o(i.drv_lcd_init) refers to drv_lcd.o(i.lcd_write_dat8) for lcd_write_dat8
     drv_lcd.o(i.drv_lcd_set_display_range) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
     drv_lcd.o(i.drv_lcd_set_display_range) refers to drv_lcd.o(i.lcd_write_dat8) for lcd_write_dat8
+    drv_lcd.o(i.drv_lcd_set_display_range_h) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
+    drv_lcd.o(i.drv_lcd_set_display_range_h) refers to drv_lcd.o(i.lcd_write_dat8) for lcd_write_dat8
     drv_lcd.o(i.drv_lcd_sleep_in) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
     drv_lcd.o(i.drv_lcd_sleep_in) refers to drv_lcd.o(i.lcd_delay_ms) for lcd_delay_ms
     drv_lcd.o(i.drv_lcd_sleep_out) refers to drv_lcd.o(i.lcd_write_cmd8) for lcd_write_cmd8
@@ -357,15 +365,14 @@ Removing Unused input sections from the image.
     Removing app_lcd.o(.rev16_text), (4 bytes).
     Removing app_lcd.o(.revsh_text), (4 bytes).
     Removing app_lcd.o(.rrx_text), (6 bytes).
-    Removing app_lcd.o(i.lcd_display_bmp), (12 bytes).
     Removing drv_lcd.o(.rev16_text), (4 bytes).
     Removing drv_lcd.o(.revsh_text), (4 bytes).
     Removing drv_lcd.o(.rrx_text), (6 bytes).
-    Removing drv_lcd.o(i.drv_lcd_display_bmp), (84 bytes).
+    Removing drv_lcd.o(i.drv_lcd_set_display_range_h), (76 bytes).
     Removing drv_lcd.o(i.drv_lcd_sleep_in), (18 bytes).
     Removing drv_lcd.o(i.drv_lcd_sleep_out), (18 bytes).
 
-175 unused section(s) (total 8196 bytes) removed from the image.
+174 unused section(s) (total 8176 bytes) removed from the image.
 
 ==============================================================================
 
@@ -393,18 +400,18 @@ Image Symbol Table
     ../Src/stm32f1xx_it.c                    0x00000000   Number         0  stm32f1xx_it.o ABSOLUTE
     ../Src/system_stm32f1xx.c                0x00000000   Number         0  system_stm32f1xx.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c 0x00000000   Number         0  stm32f1xx_hal.o ABSOLUTE
@@ -479,36 +486,33 @@ Image Symbol Table
     i.__scatterload_null                     0x08000bf0   Section        2  handlers.o(i.__scatterload_null)
     i.__scatterload_zeroinit                 0x08000bf2   Section       14  handlers.o(i.__scatterload_zeroinit)
     i.drv_lcd_backlight_control              0x08000c00   Section        0  drv_lcd.o(i.drv_lcd_backlight_control)
-    i.drv_lcd_color_clear                    0x08000c1c   Section        0  drv_lcd.o(i.drv_lcd_color_clear)
-    i.drv_lcd_display_bmp_with_empty_background 0x08000c56   Section        0  drv_lcd.o(i.drv_lcd_display_bmp_with_empty_background)
-    i.drv_lcd_display_control                0x08000cbc   Section        0  drv_lcd.o(i.drv_lcd_display_control)
-    i.drv_lcd_init                           0x08000ccc   Section        0  drv_lcd.o(i.drv_lcd_init)
-    i.drv_lcd_set_display_range              0x08000ec4   Section        0  drv_lcd.o(i.drv_lcd_set_display_range)
-    drv_lcd_set_display_range                0x08000ec5   Thumb Code    84  drv_lcd.o(i.drv_lcd_set_display_range)
-    i.lcd_color_clear                        0x08000f18   Section        0  app_lcd.o(i.lcd_color_clear)
-    i.lcd_cs_control                         0x08000f24   Section        0  drv_lcd.o(i.lcd_cs_control)
-    lcd_cs_control                           0x08000f25   Thumb Code    20  drv_lcd.o(i.lcd_cs_control)
-    i.lcd_delay_ms                           0x08000f3c   Section        0  drv_lcd.o(i.lcd_delay_ms)
-    lcd_delay_ms                             0x08000f3d   Thumb Code    24  drv_lcd.o(i.lcd_delay_ms)
-    i.lcd_display_bmp_with_empty_background  0x08000f54   Section        0  app_lcd.o(i.lcd_display_bmp_with_empty_background)
-    i.lcd_init                               0x08000f64   Section        0  app_lcd.o(i.lcd_init)
-    i.lcd_rd_control                         0x08000f8c   Section        0  drv_lcd.o(i.lcd_rd_control)
-    lcd_rd_control                           0x08000f8d   Thumb Code    20  drv_lcd.o(i.lcd_rd_control)
-    i.lcd_rs_control                         0x08000fa4   Section        0  drv_lcd.o(i.lcd_rs_control)
-    lcd_rs_control                           0x08000fa5   Thumb Code    20  drv_lcd.o(i.lcd_rs_control)
-    i.lcd_rst_control                        0x08000fbc   Section        0  drv_lcd.o(i.lcd_rst_control)
-    lcd_rst_control                          0x08000fbd   Thumb Code    20  drv_lcd.o(i.lcd_rst_control)
-    i.lcd_wr_control                         0x08000fd4   Section        0  drv_lcd.o(i.lcd_wr_control)
-    lcd_wr_control                           0x08000fd5   Thumb Code    20  drv_lcd.o(i.lcd_wr_control)
-    i.lcd_write_cmd8                         0x08000fec   Section        0  drv_lcd.o(i.lcd_write_cmd8)
-    lcd_write_cmd8                           0x08000fed   Thumb Code    54  drv_lcd.o(i.lcd_write_cmd8)
-    i.lcd_write_dat16                        0x08001028   Section        0  drv_lcd.o(i.lcd_write_dat16)
-    lcd_write_dat16                          0x08001029   Thumb Code    78  drv_lcd.o(i.lcd_write_dat16)
-    i.lcd_write_dat8                         0x0800107c   Section        0  drv_lcd.o(i.lcd_write_dat8)
-    lcd_write_dat8                           0x0800107d   Thumb Code    54  drv_lcd.o(i.lcd_write_dat8)
-    i.main                                   0x080010b8   Section        0  main.o(i.main)
-    .constdata                               0x08001134   Section    41296  main.o(.constdata)
-    .constdata                               0x0800b284   Section       16  system_stm32f1xx.o(.constdata)
+    i.drv_lcd_display_control                0x08000c1c   Section        0  drv_lcd.o(i.drv_lcd_display_control)
+    i.drv_lcd_init                           0x08000c2c   Section        0  drv_lcd.o(i.drv_lcd_init)
+    i.drv_lcd_set_display_range              0x08000e24   Section        0  drv_lcd.o(i.drv_lcd_set_display_range)
+    i.lcd_color_clear                        0x08000e78   Section        0  app_lcd.o(i.lcd_color_clear)
+    i.lcd_cs_control                         0x08000eb4   Section        0  drv_lcd.o(i.lcd_cs_control)
+    lcd_cs_control                           0x08000eb5   Thumb Code    20  drv_lcd.o(i.lcd_cs_control)
+    i.lcd_delay_ms                           0x08000ecc   Section        0  drv_lcd.o(i.lcd_delay_ms)
+    lcd_delay_ms                             0x08000ecd   Thumb Code    24  drv_lcd.o(i.lcd_delay_ms)
+    i.lcd_display_bmp                        0x08000ee4   Section        0  app_lcd.o(i.lcd_display_bmp)
+    i.lcd_display_bmp_with_empty_background  0x08000f2e   Section        0  app_lcd.o(i.lcd_display_bmp_with_empty_background)
+    i.lcd_display_x_line                     0x08000f94   Section        0  app_lcd.o(i.lcd_display_x_line)
+    i.lcd_display_y_line                     0x08000fd4   Section        0  app_lcd.o(i.lcd_display_y_line)
+    i.lcd_init                               0x08001014   Section        0  app_lcd.o(i.lcd_init)
+    i.lcd_rd_control                         0x0800103c   Section        0  drv_lcd.o(i.lcd_rd_control)
+    lcd_rd_control                           0x0800103d   Thumb Code    20  drv_lcd.o(i.lcd_rd_control)
+    i.lcd_rs_control                         0x08001054   Section        0  drv_lcd.o(i.lcd_rs_control)
+    lcd_rs_control                           0x08001055   Thumb Code    20  drv_lcd.o(i.lcd_rs_control)
+    i.lcd_rst_control                        0x0800106c   Section        0  drv_lcd.o(i.lcd_rst_control)
+    lcd_rst_control                          0x0800106d   Thumb Code    20  drv_lcd.o(i.lcd_rst_control)
+    i.lcd_wr_control                         0x08001084   Section        0  drv_lcd.o(i.lcd_wr_control)
+    lcd_wr_control                           0x08001085   Thumb Code    20  drv_lcd.o(i.lcd_wr_control)
+    i.lcd_write_cmd8                         0x0800109c   Section        0  drv_lcd.o(i.lcd_write_cmd8)
+    i.lcd_write_dat16                        0x080010d8   Section        0  drv_lcd.o(i.lcd_write_dat16)
+    i.lcd_write_dat8                         0x0800112c   Section        0  drv_lcd.o(i.lcd_write_dat8)
+    i.main                                   0x08001168   Section        0  main.o(i.main)
+    .constdata                               0x08001218   Section    41296  main.o(.constdata)
+    .constdata                               0x0800b368   Section       16  system_stm32f1xx.o(.constdata)
     .data                                    0x20000000   Section       12  stm32f1xx_hal.o(.data)
     .data                                    0x2000000c   Section        4  system_stm32f1xx.o(.data)
     STACK                                    0x20000010   Section     1024  startup_stm32f103xe.o(STACK)
@@ -637,19 +641,24 @@ Image Symbol Table
     __scatterload_null                       0x08000bf1   Thumb Code     2  handlers.o(i.__scatterload_null)
     __scatterload_zeroinit                   0x08000bf3   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
     drv_lcd_backlight_control                0x08000c01   Thumb Code    22  drv_lcd.o(i.drv_lcd_backlight_control)
-    drv_lcd_color_clear                      0x08000c1d   Thumb Code    58  drv_lcd.o(i.drv_lcd_color_clear)
-    drv_lcd_display_bmp_with_empty_background 0x08000c57   Thumb Code   102  drv_lcd.o(i.drv_lcd_display_bmp_with_empty_background)
-    drv_lcd_display_control                  0x08000cbd   Thumb Code    16  drv_lcd.o(i.drv_lcd_display_control)
-    drv_lcd_init                             0x08000ccd   Thumb Code   504  drv_lcd.o(i.drv_lcd_init)
-    lcd_color_clear                          0x08000f19   Thumb Code    12  app_lcd.o(i.lcd_color_clear)
-    lcd_display_bmp_with_empty_background    0x08000f55   Thumb Code    16  app_lcd.o(i.lcd_display_bmp_with_empty_background)
-    lcd_init                                 0x08000f65   Thumb Code    38  app_lcd.o(i.lcd_init)
-    main                                     0x080010b9   Thumb Code   108  main.o(i.main)
-    start_bmp                                0x08001134   Data       40960  main.o(.constdata)
-    gImage_trumpet                           0x0800b134   Data         336  main.o(.constdata)
-    AHBPrescTable                            0x0800b284   Data          16  system_stm32f1xx.o(.constdata)
-    Region$$Table$$Base                      0x0800b294   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800b2b4   Number         0  anon$$obj.o(Region$$Table)
+    drv_lcd_display_control                  0x08000c1d   Thumb Code    16  drv_lcd.o(i.drv_lcd_display_control)
+    drv_lcd_init                             0x08000c2d   Thumb Code   504  drv_lcd.o(i.drv_lcd_init)
+    drv_lcd_set_display_range                0x08000e25   Thumb Code    84  drv_lcd.o(i.drv_lcd_set_display_range)
+    lcd_color_clear                          0x08000e79   Thumb Code    58  app_lcd.o(i.lcd_color_clear)
+    lcd_display_bmp                          0x08000ee5   Thumb Code    74  app_lcd.o(i.lcd_display_bmp)
+    lcd_display_bmp_with_empty_background    0x08000f2f   Thumb Code   102  app_lcd.o(i.lcd_display_bmp_with_empty_background)
+    lcd_display_x_line                       0x08000f95   Thumb Code    64  app_lcd.o(i.lcd_display_x_line)
+    lcd_display_y_line                       0x08000fd5   Thumb Code    64  app_lcd.o(i.lcd_display_y_line)
+    lcd_init                                 0x08001015   Thumb Code    38  app_lcd.o(i.lcd_init)
+    lcd_write_cmd8                           0x0800109d   Thumb Code    54  drv_lcd.o(i.lcd_write_cmd8)
+    lcd_write_dat16                          0x080010d9   Thumb Code    78  drv_lcd.o(i.lcd_write_dat16)
+    lcd_write_dat8                           0x0800112d   Thumb Code    54  drv_lcd.o(i.lcd_write_dat8)
+    main                                     0x08001169   Thumb Code   160  main.o(i.main)
+    start_bmp                                0x08001218   Data       40960  main.o(.constdata)
+    gImage_trumpet                           0x0800b218   Data         336  main.o(.constdata)
+    AHBPrescTable                            0x0800b368   Data          16  system_stm32f1xx.o(.constdata)
+    Region$$Table$$Base                      0x0800b378   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800b398   Number         0  anon$$obj.o(Region$$Table)
     uwTickFreq                               0x20000000   Data           1  stm32f1xx_hal.o(.data)
     uwTickPrio                               0x20000004   Data           4  stm32f1xx_hal.o(.data)
     uwTick                                   0x20000008   Data           4  stm32f1xx_hal.o(.data)
@@ -664,25 +673,25 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000b2c4, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000b3a8, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000b2b4, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000b398, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000130   Data   RO            3    RESET               startup_stm32f103xe.o
-    0x08000130   0x08000130   0x00000000   Code   RO         1423  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000130   0x08000130   0x00000004   Code   RO         1430    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x08000134   0x08000134   0x00000004   Code   RO         1433    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000138   0x08000138   0x00000000   Code   RO         1435    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000138   0x08000138   0x00000000   Code   RO         1437    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000138   0x08000138   0x00000008   Code   RO         1438    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000140   0x08000140   0x00000000   Code   RO         1440    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000140   0x08000140   0x00000000   Code   RO         1442    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000140   0x08000140   0x00000004   Code   RO         1431    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000130   0x08000130   0x00000000   Code   RO         1427  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000130   0x08000130   0x00000004   Code   RO         1434    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000134   0x08000134   0x00000004   Code   RO         1437    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000138   0x08000138   0x00000000   Code   RO         1439    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000138   0x08000138   0x00000000   Code   RO         1441    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000138   0x08000138   0x00000008   Code   RO         1442    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000140   0x08000140   0x00000000   Code   RO         1444    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000140   0x08000140   0x00000000   Code   RO         1446    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000140   0x08000140   0x00000004   Code   RO         1435    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000144   0x08000144   0x00000024   Code   RO            4    .text               startup_stm32f103xe.o
-    0x08000168   0x08000168   0x00000024   Code   RO         1428    .text               mc_w.l(memseta.o)
-    0x0800018c   0x0800018c   0x00000024   Code   RO         1444    .text               mc_w.l(init.o)
+    0x08000168   0x08000168   0x00000024   Code   RO         1432    .text               mc_w.l(memseta.o)
+    0x0800018c   0x0800018c   0x00000024   Code   RO         1448    .text               mc_w.l(init.o)
     0x080001b0   0x080001b0   0x00000002   Code   RO          159    i.BusFault_Handler  stm32f1xx_it.o
     0x080001b2   0x080001b2   0x00000002   Code   RO          160    i.DebugMon_Handler  stm32f1xx_it.o
     0x080001b4   0x080001b4   0x00000024   Code   RO          337    i.HAL_Delay         stm32f1xx_hal.o
@@ -714,40 +723,42 @@ Memory Map of the image
     0x08000b96   0x08000b96   0x00000002   PAD
     0x08000b98   0x08000b98   0x00000048   Code   RO         1222    i.SystemInit        system_stm32f1xx.o
     0x08000be0   0x08000be0   0x00000002   Code   RO          167    i.UsageFault_Handler  stm32f1xx_it.o
-    0x08000be2   0x08000be2   0x0000000e   Code   RO         1448    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08000bf0   0x08000bf0   0x00000002   Code   RO         1449    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08000bf2   0x08000bf2   0x0000000e   Code   RO         1450    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08000c00   0x08000c00   0x0000001c   Code   RO         1307    i.drv_lcd_backlight_control  drv_lcd.o
-    0x08000c1c   0x08000c1c   0x0000003a   Code   RO         1308    i.drv_lcd_color_clear  drv_lcd.o
-    0x08000c56   0x08000c56   0x00000066   Code   RO         1310    i.drv_lcd_display_bmp_with_empty_background  drv_lcd.o
-    0x08000cbc   0x08000cbc   0x00000010   Code   RO         1311    i.drv_lcd_display_control  drv_lcd.o
-    0x08000ccc   0x08000ccc   0x000001f8   Code   RO         1312    i.drv_lcd_init      drv_lcd.o
-    0x08000ec4   0x08000ec4   0x00000054   Code   RO         1313    i.drv_lcd_set_display_range  drv_lcd.o
-    0x08000f18   0x08000f18   0x0000000c   Code   RO         1259    i.lcd_color_clear   app_lcd.o
-    0x08000f24   0x08000f24   0x00000018   Code   RO         1316    i.lcd_cs_control    drv_lcd.o
-    0x08000f3c   0x08000f3c   0x00000018   Code   RO         1317    i.lcd_delay_ms      drv_lcd.o
-    0x08000f54   0x08000f54   0x00000010   Code   RO         1261    i.lcd_display_bmp_with_empty_background  app_lcd.o
-    0x08000f64   0x08000f64   0x00000026   Code   RO         1262    i.lcd_init          app_lcd.o
-    0x08000f8a   0x08000f8a   0x00000002   PAD
-    0x08000f8c   0x08000f8c   0x00000018   Code   RO         1318    i.lcd_rd_control    drv_lcd.o
-    0x08000fa4   0x08000fa4   0x00000018   Code   RO         1319    i.lcd_rs_control    drv_lcd.o
-    0x08000fbc   0x08000fbc   0x00000018   Code   RO         1320    i.lcd_rst_control   drv_lcd.o
-    0x08000fd4   0x08000fd4   0x00000018   Code   RO         1321    i.lcd_wr_control    drv_lcd.o
-    0x08000fec   0x08000fec   0x0000003c   Code   RO         1322    i.lcd_write_cmd8    drv_lcd.o
-    0x08001028   0x08001028   0x00000054   Code   RO         1323    i.lcd_write_dat16   drv_lcd.o
-    0x0800107c   0x0800107c   0x0000003c   Code   RO         1324    i.lcd_write_dat8    drv_lcd.o
-    0x080010b8   0x080010b8   0x0000007c   Code   RO           15    i.main              main.o
-    0x08001134   0x08001134   0x0000a150   Data   RO           16    .constdata          main.o
-    0x0800b284   0x0800b284   0x00000010   Data   RO         1223    .constdata          system_stm32f1xx.o
-    0x0800b294   0x0800b294   0x00000020   Data   RO         1446    Region$$Table       anon$$obj.o
+    0x08000be2   0x08000be2   0x0000000e   Code   RO         1452    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08000bf0   0x08000bf0   0x00000002   Code   RO         1453    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08000bf2   0x08000bf2   0x0000000e   Code   RO         1454    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08000c00   0x08000c00   0x0000001c   Code   RO         1319    i.drv_lcd_backlight_control  drv_lcd.o
+    0x08000c1c   0x08000c1c   0x00000010   Code   RO         1320    i.drv_lcd_display_control  drv_lcd.o
+    0x08000c2c   0x08000c2c   0x000001f8   Code   RO         1321    i.drv_lcd_init      drv_lcd.o
+    0x08000e24   0x08000e24   0x00000054   Code   RO         1322    i.drv_lcd_set_display_range  drv_lcd.o
+    0x08000e78   0x08000e78   0x0000003a   Code   RO         1259    i.lcd_color_clear   app_lcd.o
+    0x08000eb2   0x08000eb2   0x00000002   PAD
+    0x08000eb4   0x08000eb4   0x00000018   Code   RO         1326    i.lcd_cs_control    drv_lcd.o
+    0x08000ecc   0x08000ecc   0x00000018   Code   RO         1327    i.lcd_delay_ms      drv_lcd.o
+    0x08000ee4   0x08000ee4   0x0000004a   Code   RO         1260    i.lcd_display_bmp   app_lcd.o
+    0x08000f2e   0x08000f2e   0x00000066   Code   RO         1261    i.lcd_display_bmp_with_empty_background  app_lcd.o
+    0x08000f94   0x08000f94   0x00000040   Code   RO         1262    i.lcd_display_x_line  app_lcd.o
+    0x08000fd4   0x08000fd4   0x00000040   Code   RO         1263    i.lcd_display_y_line  app_lcd.o
+    0x08001014   0x08001014   0x00000026   Code   RO         1264    i.lcd_init          app_lcd.o
+    0x0800103a   0x0800103a   0x00000002   PAD
+    0x0800103c   0x0800103c   0x00000018   Code   RO         1328    i.lcd_rd_control    drv_lcd.o
+    0x08001054   0x08001054   0x00000018   Code   RO         1329    i.lcd_rs_control    drv_lcd.o
+    0x0800106c   0x0800106c   0x00000018   Code   RO         1330    i.lcd_rst_control   drv_lcd.o
+    0x08001084   0x08001084   0x00000018   Code   RO         1331    i.lcd_wr_control    drv_lcd.o
+    0x0800109c   0x0800109c   0x0000003c   Code   RO         1332    i.lcd_write_cmd8    drv_lcd.o
+    0x080010d8   0x080010d8   0x00000054   Code   RO         1333    i.lcd_write_dat16   drv_lcd.o
+    0x0800112c   0x0800112c   0x0000003c   Code   RO         1334    i.lcd_write_dat8    drv_lcd.o
+    0x08001168   0x08001168   0x000000b0   Code   RO           15    i.main              main.o
+    0x08001218   0x08001218   0x0000a150   Data   RO           16    .constdata          main.o
+    0x0800b368   0x0800b368   0x00000010   Data   RO         1223    .constdata          system_stm32f1xx.o
+    0x0800b378   0x0800b378   0x00000020   Data   RO         1450    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800b2b4, Size: 0x00000410, Max: 0x00010000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800b398, Size: 0x00000410, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0800b2b4   0x0000000c   Data   RW          353    .data               stm32f1xx_hal.o
-    0x2000000c   0x0800b2c0   0x00000004   Data   RW         1225    .data               system_stm32f1xx.o
+    0x20000000   0x0800b398   0x0000000c   Data   RW          353    .data               stm32f1xx_hal.o
+    0x2000000c   0x0800b3a4   0x00000004   Data   RW         1225    .data               system_stm32f1xx.o
     0x20000010        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xe.o
 
 
@@ -758,10 +769,10 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        66          0          0          0          0       1941   app_lcd.o
-      1140         44          0          0          0       8647   drv_lcd.o
+       400          0          0          0          0       4561   app_lcd.o
+       980         44          0          0          0       7161   drv_lcd.o
        288         26          0          0          0        775   gpio.o
-       202         16      41296          0          0     438171   main.o
+       254         16      41296          0          0     438187   main.o
         36          8        304          0       1024        788   startup_stm32f103xe.o
        164         28          0         12          0       6405   stm32f1xx_hal.o
        172         14          0          0          0      25050   stm32f1xx_hal_cortex.o
@@ -772,9 +783,9 @@ Image component sizes
         72         16         16          4          0       1115   system_stm32f1xx.o
 
     ----------------------------------------------------------------------
-      3978        276      41648         16       1024     494567   Object Totals
+      4206        276      41648         16       1024     495717   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         8          0          0          0          0          0   (incl. Padding)
+        10          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -812,15 +823,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4100        292      41648         16       1024     492659   Grand Totals
-      4100        292      41648         16       1024     492659   ELF Image Totals
-      4100        292      41648         16          0          0   ROM Totals
+      4328        292      41648         16       1024     493757   Grand Totals
+      4328        292      41648         16       1024     493757   ELF Image Totals
+      4328        292      41648         16          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                45748 (  44.68kB)
+    Total RO  Size (Code + RO Data)                45976 (  44.90kB)
     Total RW  Size (RW Data + ZI Data)              1040 (   1.02kB)
-    Total ROM Size (Code + RO Data + RW Data)      45764 (  44.69kB)
+    Total ROM Size (Code + RO Data + RW Data)      45992 (  44.91kB)
 
 ==============================================================================
 
