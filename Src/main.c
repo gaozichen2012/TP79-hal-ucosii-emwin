@@ -2653,7 +2653,7 @@ const unsigned char gImage_trumpet[] = { /* 0X10,0X10,0X00,0X0E,0X00,0X0C,0X01,0
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	//SCB->VTOR = 0x08000000 | (0x4000);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -2677,7 +2677,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	lcd_init();
 	lcd_display_bmp_with_empty_background(88,0,gImage_trumpet,14,12,COLOR_YELLOW);
-
+	__enable_irq();
   /* USER CODE END 2 */
 
   /* Infinite loop */
