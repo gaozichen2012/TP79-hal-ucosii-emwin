@@ -70,6 +70,25 @@ void lcd_display_bmp_with_empty_background(u8 x,u8 y,const u8 *bmp,u8 width, u8 
 	}		
 }
 
+/*显示字库点阵数据函数：字体颜色、背景可设置*/
+void lcd_display_font_data(u8 x,u8 y,const u8 *bmp,u8 width, u8 height,u16 font_color,u16 back_color)
+{
+	u8 i,j;
+	drv_lcd_set_display_range(x,y,width-1,height-1);
+	lcd_write_cmd8(0x2c);  	//以下开始数据传输
+
+	for(i=0; i<height; i++)
+	{			
+		for(j=0; j<width; j++)
+		{
+			if( (*(bmp+j+(i/8)*width)) & (0x01 << (i%8)) )//写colordata
+					lcd_write_dat16(font_color);
+			else  //写back_color
+					lcd_write_dat16(back_color);			
+		}
+	}			
+}
+
 /* 显示横线 */
 void lcd_display_x_line(uint16_t StartX,uint16_t StartY,uint16_t Length,uint16_t Width,uint16_t Color)
 {

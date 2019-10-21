@@ -19,6 +19,8 @@
 "tp79-hal-ucosii-emwin\system_stm32f1xx.o"
 "tp79-hal-ucosii-emwin\app_lcd.o"
 "tp79-hal-ucosii-emwin\drv_lcd.o"
+"tp79-hal-ucosii-emwin\drv_font.o"
+"tp79-hal-ucosii-emwin\app_font.o"
 --library_type=microlib --strict --scatter "TP79-hal-ucosii-emwin\TP79-hal-ucosii-emwin.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

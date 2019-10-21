@@ -68,6 +68,12 @@ void Error_Handler(void);
 #define LCD_RS_GPIO_Port GPIOE
 #define LCD_RST_Pin GPIO_PIN_6
 #define LCD_RST_GPIO_Port GPIOE
+#define FONT_SPI_MISO_Pin GPIO_PIN_1
+#define FONT_SPI_MISO_GPIO_Port GPIOB
+#define FONT_SPI_SCLK_Pin GPIO_PIN_2
+#define FONT_SPI_SCLK_GPIO_Port GPIOB
+#define FONT_SPI_MOSI_Pin GPIO_PIN_7
+#define FONT_SPI_MOSI_GPIO_Port GPIOE
 #define LCD_D0_Pin GPIO_PIN_8
 #define LCD_D0_GPIO_Port GPIOE
 #define LCD_D1_Pin GPIO_PIN_9
@@ -84,6 +90,8 @@ void Error_Handler(void);
 #define LCD_D6_GPIO_Port GPIOE
 #define LCD_D7_Pin GPIO_PIN_15
 #define LCD_D7_GPIO_Port GPIOE
+#define FONT_SPI_CS_Pin GPIO_PIN_12
+#define FONT_SPI_CS_GPIO_Port GPIOD
 #define LCD_BL_Pin GPIO_PIN_8
 #define LCD_BL_GPIO_Port GPIOB
 #define LED_RED_Pin GPIO_PIN_9

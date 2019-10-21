@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "app_lcd.h"
+#include "app_font.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -2690,10 +2691,12 @@ int main(void)
 		lcd_display_bmp(0,0,start_bmp,160,128);
 		lcd_display_y_line(5,15,25,5,COLOR_NAVYBLUE);
 		lcd_display_x_line(15,15,25,5,COLOR_NAVYBLUE);
+		ui_display_chinese_15x16(8,90,"高子晨测试TomTEST", COLOR_WIGHT, COLOR_BLACK);	
 		HAL_Delay(500);
 		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port,LED_GREEN_Pin);
 		lcd_display_y_line(35,45,55,5,COLOR_NAVYBLUE);
 		lcd_display_x_line(45,45,55,5,COLOR_NAVYBLUE);
+		ui_display_chinese_11x12(8,90,"高子晨测试TomTEST", COLOR_GREEN, COLOR_WIGHT);	
 		HAL_Delay(500);
   }
   /* USER CODE END 3 */
