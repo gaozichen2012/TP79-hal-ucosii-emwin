@@ -2,16 +2,18 @@
 在TP79上测试STM32的hal库+UCOSII+emWin
 
 ## 硬件平台
-*芯片：STM32F103VE
-*通信模块：移远EC20
-*显示屏尺寸：160*128
-*字库IC：高通GT21L16S2Y
+* 芯片：STM32F103VE
+* 通信模块：移远EC20
+* 显示屏尺寸：160*128
+* 字库IC：高通GT21L16S2Y
 
 ## 使用工具
 * STM32cubeMX：ST公司官方工具，以图形化界面配置STM32的驱动
 * MDK 5：编译&下载
 ## 注意事项
 * 测试bootloader时出现死机的现象，排查后发现HAL_delay函数异常，死在SysTick_Handler中断，原因是在bootloader中关闭了总中断，需要在app中打开总中断
+* 添加bootloader的app程序工程配置如下图，起始地址为0x8004000：
+![app起始地址MDK工程配置](https://github.com/gaozichen2012/TP79-hal-ucosii-emwin/blob/master/app%E8%B5%B7%E5%A7%8B%E5%9C%B0%E5%9D%80MDK%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE.png)
 * 显示的图片是用Img2Lcd生成的数组，Img2Lcd工具参数配置见下图：
 ![Img2Lcd工具参数截图](https://raw.githubusercontent.com/gaozichen2012/TP79-hal-ucosii-emwin/master/Image2Lcd%E8%BD%AF%E4%BB%B6%E6%88%AA%E5%9B%BE.png)
 ## 项目记录
