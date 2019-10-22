@@ -136,7 +136,7 @@ typedef struct {
 *   calling this routine make sure that the coordinates are in range, so
 *   that no check on the parameters needs to be performed.
 */
-#if 1
+#if 0
 static void _SetPixelIndex(GUI_DEVICE * pDevice, int x, int y, int PixelIndex) 
 {
 	lcd_display_pixel(x,y,PixelIndex);

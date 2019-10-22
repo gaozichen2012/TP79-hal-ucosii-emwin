@@ -175,8 +175,7 @@ void LCD_X_Config(void) {
   GUI_PORT_API PortAPI = {0};
   //
   // Set display driver and color conversion
-  //
-  pDevice = GUI_DEVICE_CreateAndLink(GUIDRV_FLEXCOLOR, GUICC_565, 0, 0);
+  pDevice = GUI_DEVICE_CreateAndLink(GUIDRV_FLEXCOLOR, GUICC_565, 0, 0);//GUICC_565
   //
   // Display driver configuration, required for Lin-driver
   //
@@ -185,7 +184,7 @@ void LCD_X_Config(void) {
   //
   // Orientation
   //
-  Config.Orientation = GUI_SWAP_XY | GUI_MIRROR_Y;
+  Config.Orientation = GUI_ROTATION_CW;//此参数决定显示屏方向
   GUIDRV_FlexColor_Config(pDevice, &Config);
   //
   // Set controller and operation mode

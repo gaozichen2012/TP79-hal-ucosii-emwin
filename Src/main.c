@@ -2697,6 +2697,8 @@ int main(void)
 	GUI_Clear();
 	GUI_SetFont(&GUI_Font24_ASCII);
 	GUI_DispStringAt("hello tom!",0,0);
+	
+	GUI_DispStringAt("hello tom!",0,0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
