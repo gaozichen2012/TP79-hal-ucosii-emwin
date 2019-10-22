@@ -3,7 +3,7 @@
 #include "app_lcd.h"
 #include "drv_lcd.h"
 
-void lcd_init(void)
+void app_lcd_init(void)
 {
 	drv_lcd_init();
 	drv_lcd_display_control(ON);
@@ -115,10 +115,19 @@ void lcd_display_y_line(uint16_t StartX,uint16_t StartY,uint16_t Length,uint16_t
 		}	
 }
 
+/* 画点函数（供emwin使用） */
+void lcd_display_pixel(u16 x,u16 y,u16 color)
+{
+	drv_lcd_set_display_range(x,y,0,0);
+	lcd_write_cmd8(0x2c);  	//以下开始数据传输
+	lcd_write_dat16(color);
+}
 
+/* 读点函数（供emwin使用） */
 
-
-
-
+u16 get_lcd_pixel_color(u16 x,u16 y)
+{
+	return 0xFFFF;
+}
 
 

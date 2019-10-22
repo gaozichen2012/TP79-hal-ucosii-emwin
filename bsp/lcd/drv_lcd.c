@@ -116,6 +116,8 @@ void lcd_write_dat16(u16 Data)
 	lcd_cs_control(ON); 	
 }
 
+
+
 /* lcd±³¹âµÆ¿ØÖÆ */
 void drv_lcd_backlight_control(on_off_t states)
 {

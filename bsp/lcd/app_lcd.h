@@ -28,11 +28,15 @@
 #define APP_LCD_API extern
 #endif
 
-APP_LCD_API void lcd_init(void);
+APP_LCD_API void app_lcd_init(void);
 APP_LCD_API void lcd_color_clear(u8 x,u8 y, u16 colorData, u8 width, u8 height);
 APP_LCD_API void lcd_display_y_line(uint16_t StartX,uint16_t StartY,uint16_t Length,uint16_t Width,uint16_t Color);
 APP_LCD_API void lcd_display_x_line(uint16_t StartX,uint16_t StartY,uint16_t Length,uint16_t Width,uint16_t Color);
 APP_LCD_API void lcd_display_bmp(u8 x,u8 y,const u8 *bmp,u8 width, u8 height);
 APP_LCD_API void lcd_display_bmp_with_empty_background(u8 x,u8 y,const u8 *bmp,u8 width, u8 height,u16 back_color);
 APP_LCD_API void lcd_display_font_data(u8 x,u8 y,const u8 *bmp,u8 width, u8 height,u16 font_color,u16 back_color);
+
+/* 画点函数（供emwin使用） */
+APP_LCD_API void lcd_display_pixel(u16 x,u16 y,u16 color);
+APP_LCD_API u16 get_lcd_pixel_color(u16 x,u16 y);
 #endif

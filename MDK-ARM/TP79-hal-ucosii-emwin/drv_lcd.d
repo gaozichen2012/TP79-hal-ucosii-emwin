@@ -21,6 +21,7 @@ tp79-hal-ucosii-emwin\drv_lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_h
 tp79-hal-ucosii-emwin\drv_lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
 tp79-hal-ucosii-emwin\drv_lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
 tp79-hal-ucosii-emwin\drv_lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+tp79-hal-ucosii-emwin\drv_lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_crc.h
 tp79-hal-ucosii-emwin\drv_lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 tp79-hal-ucosii-emwin\drv_lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 tp79-hal-ucosii-emwin\drv_lcd.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h

@@ -20,12 +20,17 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "crc.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "app_lcd.h"
 #include "app_font.h"
+
+#include "malloc.h"
+#include "GUI.h"
+//#include "GUIDemo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -2653,7 +2658,7 @@ const unsigned char gImage_trumpet[] = { /* 0X10,0X10,0X00,0X0E,0X00,0X0C,0X01,0
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	//SCB->VTOR = 0x08000000 | (0x4000);
+	//SCB->VTOR = 0x08000000 | (0x4000);//VECT_TAB_OFFSET
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -2674,10 +2679,24 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
-	lcd_init();
+	app_lcd_init();
 	lcd_display_bmp_with_empty_background(88,0,gImage_trumpet,14,12,COLOR_YELLOW);
 	__enable_irq();
+	
+	lcd_display_pixel(1,1,0);
+	lcd_display_pixel(1,2,0);
+	lcd_display_pixel(1,3,0);
+	lcd_display_pixel(1,4,0);
+	my_mem_init(SRAMIN); 		//初始化内部内存池
+	my_mem_init(SRAMEX);  		//初始化外部内存池	GUI_Init();
+	GUI_Init();
+	GUI_SetBkColor(GUI_BLUE);
+	GUI_SetColor(GUI_YELLOW);
+	GUI_Clear();
+	GUI_SetFont(&GUI_Font24_ASCII);
+	GUI_DispStringAt("hello tom!",0,0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -2687,17 +2706,17 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		HAL_GPIO_TogglePin(LED_RED_GPIO_Port,LED_RED_Pin);
-		lcd_display_bmp(0,0,start_bmp,160,128);
-		lcd_display_y_line(5,15,25,5,COLOR_NAVYBLUE);
-		lcd_display_x_line(15,15,25,5,COLOR_NAVYBLUE);
-		ui_display_chinese_15x16(8,90,"高子晨测试TomTEST", COLOR_WIGHT, COLOR_BLACK);	
-		HAL_Delay(500);
-		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port,LED_GREEN_Pin);
-		lcd_display_y_line(35,45,55,5,COLOR_NAVYBLUE);
-		lcd_display_x_line(45,45,55,5,COLOR_NAVYBLUE);
-		ui_display_chinese_11x12(8,90,"高子晨测试TomTEST", COLOR_GREEN, COLOR_WIGHT);	
-		HAL_Delay(500);
+//		HAL_GPIO_TogglePin(LED_RED_GPIO_Port,LED_RED_Pin);
+//		lcd_display_bmp(0,0,start_bmp,160,128);
+//		lcd_display_y_line(5,15,25,5,COLOR_NAVYBLUE);
+//		lcd_display_x_line(15,15,25,5,COLOR_NAVYBLUE);
+//		ui_display_chinese_15x16(8,90,"高子晨测试TomTEST", COLOR_WIGHT, COLOR_BLACK);	
+//		HAL_Delay(500);
+//		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port,LED_GREEN_Pin);
+//		lcd_display_y_line(35,45,55,5,COLOR_NAVYBLUE);
+//		lcd_display_x_line(45,45,55,5,COLOR_NAVYBLUE);
+//		ui_display_chinese_11x12(8,90,"高子晨测试TomTEST", COLOR_GREEN, COLOR_WIGHT);	
+//		HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }

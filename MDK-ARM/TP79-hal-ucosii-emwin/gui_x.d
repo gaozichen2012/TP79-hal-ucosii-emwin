@@ -1,0 +1,9 @@
+tp79-hal-ucosii-emwin\gui_x.o: ..\bsp\STemWin\OS\GUI_X.c
+tp79-hal-ucosii-emwin\gui_x.o: ..\bsp\STemWin\inc\GUI.h
+tp79-hal-ucosii-emwin\gui_x.o: C:\Keil_v5_525\ARM\ARMCC\Bin\..\include\stddef.h
+tp79-hal-ucosii-emwin\gui_x.o: ..\bsp\STemWin\inc\GUI_ConfDefaults.h
+tp79-hal-ucosii-emwin\gui_x.o: ..\bsp\STemWin\Config\GUIConf.h
+tp79-hal-ucosii-emwin\gui_x.o: ..\bsp\STemWin\inc\GUI_Type.h
+tp79-hal-ucosii-emwin\gui_x.o: ..\bsp\STemWin\inc\LCD.h
+tp79-hal-ucosii-emwin\gui_x.o: ..\bsp\STemWin\inc\Global.h
+tp79-hal-ucosii-emwin\gui_x.o: ..\bsp\STemWin\inc\GUI_Version.h

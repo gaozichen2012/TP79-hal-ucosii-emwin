@@ -20,8 +20,17 @@ tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f
 tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
 tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
 tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_crc.h
 tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 tp79-hal-ucosii-emwin\stm32f1xx_it.o: ..\bsp\typedef.h
 tp79-hal-ucosii-emwin\stm32f1xx_it.o: ../Inc/stm32f1xx_it.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: ..\bsp\STemWin\inc\GUI.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: C:\Keil_v5_525\ARM\ARMCC\Bin\..\include\stddef.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: ..\bsp\STemWin\inc\GUI_ConfDefaults.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: ..\bsp\STemWin\Config\GUIConf.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: ..\bsp\STemWin\inc\GUI_Type.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: ..\bsp\STemWin\inc\LCD.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: ..\bsp\STemWin\inc\Global.h
+tp79-hal-ucosii-emwin\stm32f1xx_it.o: ..\bsp\STemWin\inc\GUI_Version.h
