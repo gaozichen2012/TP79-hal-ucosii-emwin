@@ -5,6 +5,7 @@
 * 芯片：STM32F103VE
 * 通信模块：移远EC20
 * 显示屏尺寸：160*128
+* 显示屏驱动IC：ST7735
 * 字库IC：高通GT21L16S2Y
 
 ## 使用工具
@@ -17,6 +18,8 @@
 * 显示的图片是用Img2Lcd生成的数组，Img2Lcd工具参数配置见下图：
 ![Img2Lcd工具参数截图](https://raw.githubusercontent.com/gaozichen2012/TP79-hal-ucosii-emwin/master/Image2Lcd%E8%BD%AF%E4%BB%B6%E6%88%AA%E5%9B%BE.png)
 ## 项目记录
+### 2019.10.23
+新加STemWin测试正常，
 ### 2019.10.21
 新加bootloader驱动，测试正常可以正常跳转
 ### 2019.10.20
@@ -31,5 +34,6 @@
 bootloader的目的是为了在正式产品中实现串口升级或者远程升级，如果产品出现重大bug需要修复，客户可以直接操作升级，而不需要返厂；
 单片机的bootloader第一步是要实现从bootloader到app的成功跳转，在本bootloader中运行完boot跳转到app的起始地址0x8004000
 
-
+### STemWin移植
+大多数使用STemWin的显示屏都是FSMC接口的，一些小屏则使用SPI接口，本项目采用的屏就是ST7735驱动SPI串口屏
 

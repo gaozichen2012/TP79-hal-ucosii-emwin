@@ -2692,13 +2692,26 @@ int main(void)
 	my_mem_init(SRAMIN); 		//初始化内部内存池
 	my_mem_init(SRAMEX);  		//初始化外部内存池	GUI_Init();
 	GUI_Init();
-	GUI_SetBkColor(GUI_BLUE);
-	GUI_SetColor(GUI_YELLOW);
 	GUI_Clear();
 	GUI_SetFont(&GUI_Font24_ASCII);
+	GUI_SetFont(&GUI_Font24_ASCII);
 	GUI_DispStringAt("hello tom!",0,0);
-	
-	GUI_DispStringAt("hello tom!",0,0);
+	GUI_SetBkColor(GUI_BLUE);
+	GUI_SetColor(GUI_YELLOW);
+	GUI_DispStringAt("hello tom!",0,20);
+	GUI_SetBkColor(GUI_YELLOW);
+	GUI_SetColor(GUI_BLUE);
+	GUI_DispStringAt("hello tom!",0,40);
+	GUI_SetBkColor(GUI_GREEN);
+	GUI_SetColor(GUI_RED);
+	GUI_DispStringAt("hello tom!",0,60);
+	GUI_SetBkColor(GUI_BLUE);
+	GUI_SetColor(GUI_YELLOW);
+	GUI_DispStringAt("hello tom!",0,80);
+	GUI_SetBkColor(GUI_WHITE);
+	GUI_SetColor(GUI_BLACK);
+	GUI_DispStringAt("hello tom!",0,100);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

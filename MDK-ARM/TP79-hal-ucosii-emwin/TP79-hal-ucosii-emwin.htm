@@ -3,7 +3,7 @@
 <title>Static Call Graph - [TP79-hal-ucosii-emwin\TP79-hal-ucosii-emwin.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image TP79-hal-ucosii-emwin\TP79-hal-ucosii-emwin.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Oct 22 20:58:28 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Oct 23 15:49:36 2019
 <BR><P>
 <H3>Maximum Stack Usage =        392 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2156,7 +2156,7 @@ Global Symbols
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LcdWriteData
 </UL>
 
-<P><STRONG><a name="[4d]"></a>main</STRONG> (Thumb, 148 bytes, Stack size 16 bytes, main.o(i.main))
+<P><STRONG><a name="[4d]"></a>main</STRONG> (Thumb, 246 bytes, Stack size 16 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = main &rArr; GUI_Init &rArr; GUI__Config &rArr; LCD_X_Config &rArr; GUI_DEVICE_CreateAndLink &rArr; GUI_DEVICE_Create &rArr; GUI_ALLOC_GetFixedBlock &rArr; _InitOnce &rArr; _EnlargeBlocks &rArr; _Alloc &rArr;  _InitOnce (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_mem_init
@@ -2258,7 +2258,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lcdconf_flexcolor_template.o(i.LCD_X_Config)
 </UL>
-<P><STRONG><a name="[61]"></a>LcdWriteDataMultiple</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, lcdconf_flexcolor_template.o(i.LcdWriteDataMultiple))
+<P><STRONG><a name="[61]"></a>LcdWriteDataMultiple</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, lcdconf_flexcolor_template.o(i.LcdWriteDataMultiple))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LcdWriteDataMultiple &rArr; lcd_write_dat8
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_write_dat8

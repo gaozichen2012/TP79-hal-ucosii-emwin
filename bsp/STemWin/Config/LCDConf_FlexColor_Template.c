@@ -133,11 +133,10 @@ static void LcdWriteData(u8 Data)
 static void LcdWriteDataMultiple(u8 * pData, int NumItems) 
 {
 	int start_size = NumItems;
-	
+
   while (NumItems--) 
 	{
-		//lcd_write_cmd8(NumItems);
-		lcd_write_dat8(*(pData+start_size-NumItems));
+		lcd_write_dat8(*(pData+start_size-NumItems-1));
   }
 }
 
@@ -175,7 +174,7 @@ void LCD_X_Config(void) {
   GUI_PORT_API PortAPI = {0};
   //
   // Set display driver and color conversion
-  pDevice = GUI_DEVICE_CreateAndLink(GUIDRV_FLEXCOLOR, GUICC_565, 0, 0);//GUICC_565
+  pDevice = GUI_DEVICE_CreateAndLink(GUIDRV_FLEXCOLOR, GUICC_565, 0, 0);//GUICC_565 ºì GUICC_M565À¶
   //
   // Display driver configuration, required for Lin-driver
   //
