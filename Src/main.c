@@ -30,6 +30,10 @@
 
 #include "malloc.h"
 #include "GUI.h"
+
+#include "FramewinDLG.h"
+#include "WM.h"
+#include "DIALOG.h"
 //#include "GUIDemo.h"
 /* USER CODE END Includes */
 
@@ -2649,6 +2653,31 @@ const unsigned char gImage_trumpet[] = { /* 0X10,0X10,0X00,0X0E,0X00,0X0C,0X01,0
 0XF8,0X00,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XF8,0X00,
 0XF8,0X00,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XFF,0XF8,0X00,0XFF,0XFF,0XFF,0XFF,
 };
+
+static void emwindemo_task(void)
+{
+	//更换皮肤
+//	BUTTON_SetDefaultSkin(BUTTON_SKIN_FLEX); 
+//	CHECKBOX_SetDefaultSkin(CHECKBOX_SKIN_FLEX);
+//	DROPDOWN_SetDefaultSkin(DROPDOWN_SKIN_FLEX);
+//	FRAMEWIN_SetDefaultSkin(FRAMEWIN_SKIN_FLEX);
+//	HEADER_SetDefaultSkin(HEADER_SKIN_FLEX);
+//	MENU_SetDefaultSkin(MENU_SKIN_FLEX);
+//	MULTIPAGE_SetDefaultSkin(MULTIPAGE_SKIN_FLEX);
+//	PROGBAR_SetDefaultSkin(PROGBAR_SKIN_FLEX);
+//	RADIO_SetDefaultSkin(RADIO_SKIN_FLEX);
+//	SCROLLBAR_SetDefaultSkin(SCROLLBAR_SKIN_FLEX);
+//	SLIDER_SetDefaultSkin(SLIDER_SKIN_FLEX);
+//	SPINBOX_SetDefaultSkin(SPINBOX_SKIN_FLEX);
+	CreateFramewin();
+	GUI_Delay(100); 
+	CreateFramewin();
+	while(1)
+	{
+		GUI_Delay(100); 
+	}
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -2690,27 +2719,28 @@ int main(void)
 	lcd_display_pixel(1,3,0);
 	lcd_display_pixel(1,4,0);
 	my_mem_init(SRAMIN); 		//初始化内部内存池
-	my_mem_init(SRAMEX);  		//初始化外部内存池	GUI_Init();
+	//my_mem_init(SRAMEX);  		//初始化外部内存池
+	//WM_SetCreateFlags(WM_CF_MEMDEV); 	//启动所有窗口的存储设备
 	GUI_Init();
-	GUI_Clear();
-	GUI_SetFont(&GUI_Font24_ASCII);
-	GUI_SetFont(&GUI_Font24_ASCII);
-	GUI_DispStringAt("hello tom!",0,0);
-	GUI_SetBkColor(GUI_BLUE);
-	GUI_SetColor(GUI_YELLOW);
-	GUI_DispStringAt("hello tom!",0,20);
-	GUI_SetBkColor(GUI_YELLOW);
-	GUI_SetColor(GUI_BLUE);
-	GUI_DispStringAt("hello tom!",0,40);
-	GUI_SetBkColor(GUI_GREEN);
-	GUI_SetColor(GUI_RED);
-	GUI_DispStringAt("hello tom!",0,60);
-	GUI_SetBkColor(GUI_BLUE);
-	GUI_SetColor(GUI_YELLOW);
-	GUI_DispStringAt("hello tom!",0,80);
-	GUI_SetBkColor(GUI_WHITE);
-	GUI_SetColor(GUI_BLACK);
-	GUI_DispStringAt("hello tom!",0,100);
+//	GUI_Clear();
+//	GUI_SetFont(&GUI_Font24_ASCII);
+//	GUI_SetFont(&GUI_Font24_ASCII);
+//	GUI_DispStringAt("hello tom!",0,0);
+//	GUI_SetBkColor(GUI_BLUE);
+//	GUI_SetColor(GUI_YELLOW);
+//	GUI_DispStringAt("hello tom!",0,20);
+//	GUI_SetBkColor(GUI_YELLOW);
+//	GUI_SetColor(GUI_BLUE);
+//	GUI_DispStringAt("hello tom!",0,40);
+//	GUI_SetBkColor(GUI_GREEN);
+//	GUI_SetColor(GUI_RED);
+//	GUI_DispStringAt("hello tom!",0,60);
+//	GUI_SetBkColor(GUI_BLUE);
+//	GUI_SetColor(GUI_YELLOW);
+//	GUI_DispStringAt("hello tom!",0,80);
+//	GUI_SetBkColor(GUI_WHITE);
+//	GUI_SetColor(GUI_BLACK);
+//	GUI_DispStringAt("hello tom!",0,100);
 
   /* USER CODE END 2 */
 
@@ -2719,7 +2749,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		emwindemo_task();
+			
     /* USER CODE BEGIN 3 */
 //		HAL_GPIO_TogglePin(LED_RED_GPIO_Port,LED_RED_Pin);
 //		lcd_display_bmp(0,0,start_bmp,160,128);
@@ -2732,6 +2763,7 @@ int main(void)
 //		lcd_display_x_line(45,45,55,5,COLOR_NAVYBLUE);
 //		ui_display_chinese_11x12(8,90,"高子晨测试TomTEST", COLOR_GREEN, COLOR_WIGHT);	
 //		HAL_Delay(500);
+		
   }
   /* USER CODE END 3 */
 }

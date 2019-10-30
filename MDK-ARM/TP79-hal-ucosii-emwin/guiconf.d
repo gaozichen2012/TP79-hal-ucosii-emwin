@@ -7,3 +7,6 @@ tp79-hal-ucosii-emwin\guiconf.o: ..\bsp\STemWin\inc\GUI_Type.h
 tp79-hal-ucosii-emwin\guiconf.o: ..\bsp\STemWin\inc\LCD.h
 tp79-hal-ucosii-emwin\guiconf.o: ..\bsp\STemWin\inc\Global.h
 tp79-hal-ucosii-emwin\guiconf.o: ..\bsp\STemWin\inc\GUI_Version.h
+tp79-hal-ucosii-emwin\guiconf.o: ..\bsp\MALLOC\malloc.h
+tp79-hal-ucosii-emwin\guiconf.o: ..\bsp\typedef.h
+tp79-hal-ucosii-emwin\guiconf.o: C:\Keil_v5_525\ARM\ARMCC\Bin\..\include\stdint.h

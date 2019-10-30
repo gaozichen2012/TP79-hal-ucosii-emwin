@@ -1,0 +1,6 @@
+--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\bsp\lcd -I ..\bsp -I ..\bsp\STemWin\Config -I ..\bsp\STemWin\inc -I ..\bsp\MALLOC
+-I.\RTE\_TP79-hal-ucosii-emwin
+-IC:\Keil_v5_525\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include
+-IC:\Keil_v5_525\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE
+-o "tp79-hal-ucosii-emwin\tom framewindlg.o" --omf_browse "tp79-hal-ucosii-emwin\tom framewindlg.crf" --depend "tp79-hal-ucosii-emwin\tom framewindlg.d" "..\bsp\TOM FramewinDLG.c"

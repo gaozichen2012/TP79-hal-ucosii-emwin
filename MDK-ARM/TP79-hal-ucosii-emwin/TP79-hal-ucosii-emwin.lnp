@@ -23,6 +23,7 @@
 "tp79-hal-ucosii-emwin\drv_lcd.o"
 "tp79-hal-ucosii-emwin\drv_font.o"
 "tp79-hal-ucosii-emwin\app_font.o"
+"tp79-hal-ucosii-emwin\framewindlg.o"
 "tp79-hal-ucosii-emwin\gui_x.o"
 "tp79-hal-ucosii-emwin\guiconf.o"
 "tp79-hal-ucosii-emwin\guidrv_template.o"

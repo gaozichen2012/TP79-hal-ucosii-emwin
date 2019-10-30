@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\bsp\lcd;..\bsp;..\bsp\STemWin\Config;..\bsp\STemWin\inc;..\bsp\MALLOC</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\bsp\lcd;..\bsp;..\bsp\STemWin\Config;..\bsp\STemWin\inc;..\bsp\MALLOC;..\bsp;..\bsp\STemWin\Software;..\bsp\STemWin\emwin_demo</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -500,7 +500,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>bsp/lcd</GroupName>
+          <GroupName>bsp</GroupName>
           <Files>
             <File>
               <FileName>app_lcd.c</FileName>
@@ -521,6 +521,11 @@
               <FileName>app_font.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\lcd\app_font.c</FilePath>
+            </File>
+            <File>
+              <FileName>FramewinDLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\STemWin\Software\FramewinDLG.c</FilePath>
             </File>
           </Files>
         </Group>
