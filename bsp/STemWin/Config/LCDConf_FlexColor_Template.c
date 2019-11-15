@@ -174,7 +174,7 @@ void LCD_X_Config(void) {
   GUI_PORT_API PortAPI = {0};
   //
   // Set display driver and color conversion
-  pDevice = GUI_DEVICE_CreateAndLink(GUIDRV_FLEXCOLOR, GUICC_565, 0, 0);//GUICC_565 ºì GUICC_M565À¶
+  pDevice = GUI_DEVICE_CreateAndLink(GUIDRV_FLEXCOLOR, GUICC_M565, 0, 0);//GUICC_565 ºì GUICC_M565À¶
   //
   // Display driver configuration, required for Lin-driver
   //

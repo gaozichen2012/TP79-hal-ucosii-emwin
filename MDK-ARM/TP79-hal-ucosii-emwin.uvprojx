@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\bsp\lcd;..\bsp;..\bsp\STemWin\Config;..\bsp\STemWin\inc;..\bsp\MALLOC;..\bsp;..\bsp\STemWin\Software;..\bsp\STemWin\emwin_demo</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\bsp\lcd;..\bsp;..\bsp\STemWin\Config;..\bsp\STemWin\inc;..\bsp\MALLOC;..\bsp;..\bsp\STemWin\Software;..\bsp\STemWin\emwin_demo;..\bsp\key</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -523,9 +523,9 @@
               <FilePath>..\bsp\lcd\app_font.c</FilePath>
             </File>
             <File>
-              <FileName>FramewinDLG.c</FileName>
+              <FileName>drv_key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\bsp\STemWin\Software\FramewinDLG.c</FilePath>
+              <FilePath>..\bsp\key\drv_key.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -581,6 +581,23 @@
         </Group>
         <Group>
           <GroupName>EMWIN_Demo</GroupName>
+          <Files>
+            <File>
+              <FileName>Framewin1DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\STemWin\Software\Framewin1DLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Framewin2DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\STemWin\Software\Framewin2DLG.c</FilePath>
+            </File>
+            <File>
+              <FileName>Framewin3DLG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\STemWin\Software\Framewin3DLG.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>malloc</GroupName>

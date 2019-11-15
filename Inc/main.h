@@ -92,6 +92,12 @@ void Error_Handler(void);
 #define LCD_D7_GPIO_Port GPIOE
 #define FONT_SPI_CS_Pin GPIO_PIN_12
 #define FONT_SPI_CS_GPIO_Port GPIOD
+#define KEY1_Pin GPIO_PIN_11
+#define KEY1_GPIO_Port GPIOA
+#define KEY3_Pin GPIO_PIN_3
+#define KEY3_GPIO_Port GPIOD
+#define KEY2_Pin GPIO_PIN_4
+#define KEY2_GPIO_Port GPIOD
 #define LCD_BL_Pin GPIO_PIN_8
 #define LCD_BL_GPIO_Port GPIOB
 #define LED_RED_Pin GPIO_PIN_9

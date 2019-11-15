@@ -25,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "drv_key.h"
 #include "app_lcd.h"
 #include "app_font.h"
 
@@ -2669,9 +2670,7 @@ static void emwindemo_task(void)
 //	SCROLLBAR_SetDefaultSkin(SCROLLBAR_SKIN_FLEX);
 //	SLIDER_SetDefaultSkin(SLIDER_SKIN_FLEX);
 //	SPINBOX_SetDefaultSkin(SPINBOX_SKIN_FLEX);
-	CreateFramewin();
-	GUI_Delay(100); 
-	CreateFramewin();
+	CreateFramewin2();
 	while(1)
 	{
 		GUI_Delay(100); 
@@ -2749,8 +2748,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		emwindemo_task();
-			
+
     /* USER CODE BEGIN 3 */
 //		HAL_GPIO_TogglePin(LED_RED_GPIO_Port,LED_RED_Pin);
 //		lcd_display_bmp(0,0,start_bmp,160,128);
@@ -2763,7 +2761,14 @@ int main(void)
 //		lcd_display_x_line(45,45,55,5,COLOR_NAVYBLUE);
 //		ui_display_chinese_11x12(8,90,"¸ß×Ó³¿²âÊÔTomTEST", COLOR_GREEN, COLOR_WIGHT);	
 //		HAL_Delay(500);
-		
+		if(read_key1_states()==GPIO_PIN_RESET||read_key2_states()==GPIO_PIN_RESET||read_key3_states()==GPIO_PIN_RESET)
+		{
+			HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin,GPIO_PIN_SET);
+		}
+		else
+		{
+			HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin,GPIO_PIN_RESET);
+		}
   }
   /* USER CODE END 3 */
 }

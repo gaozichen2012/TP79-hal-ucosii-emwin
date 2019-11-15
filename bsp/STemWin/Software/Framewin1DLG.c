@@ -30,8 +30,7 @@
 *
 **********************************************************************
 */
-#define ID_FRAMEWIN_0        (GUI_ID_USER + 0x00)
-#define ID_LISTBOX_0        (GUI_ID_USER + 0x01)
+#define ID_FRAMEWIN_0     (GUI_ID_USER + 0x00)
 
 
 // USER START (Optionally insert additional defines)
@@ -52,8 +51,7 @@
 *       _aDialogCreate
 */
 static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
-  { FRAMEWIN_CreateIndirect, "Framewin", ID_FRAMEWIN_0, 5, 5, 150, 118, 0, 0x64, 0 },
-  { LISTBOX_CreateIndirect, "Listbox", ID_LISTBOX_0, 10, 5, 80, 60, 0, 0x0, 0 },
+  { FRAMEWIN_CreateIndirect, "Framewin1", ID_FRAMEWIN_0, 0, 0, 160, 128, 0, 0x64, 0 },
   // USER START (Optionally insert additional widgets)
   // USER END
 };
@@ -74,56 +72,21 @@ static const GUI_WIDGET_CREATE_INFO _aDialogCreate[] = {
 */
 static void _cbDialog(WM_MESSAGE * pMsg) {
   WM_HWIN hItem;
-  int     NCode;
-  int     Id;
   // USER START (Optionally insert additional variables)
   // USER END
 
   switch (pMsg->MsgId) {
   case WM_INIT_DIALOG:
     //
-    // Initialization of 'Framewin'
+    // Initialization of 'Framewin1'
     //
     hItem = pMsg->hWin;
     FRAMEWIN_SetFont(hItem, GUI_FONT_24_ASCII);
     FRAMEWIN_SetText(hItem, "TOM TEST");
     FRAMEWIN_SetTextAlign(hItem, GUI_TA_HCENTER | GUI_TA_VCENTER);
     FRAMEWIN_SetTitleHeight(hItem, 20);
-    //
-    // Initialization of 'Listbox'
-    //
-    hItem = WM_GetDialogItem(pMsg->hWin, ID_LISTBOX_0);
-    LISTBOX_AddString(hItem, "Item 0");
-    LISTBOX_AddString(hItem, "Item 1");
-    LISTBOX_AddString(hItem, "Item 2");
     // USER START (Optionally insert additional code for further widget initialization)
     // USER END
-    break;
-  case WM_NOTIFY_PARENT:
-    Id    = WM_GetId(pMsg->hWinSrc);
-    NCode = pMsg->Data.v;
-    switch(Id) {
-    case ID_LISTBOX_0: // Notifications sent by 'Listbox'
-      switch(NCode) {
-      case WM_NOTIFICATION_CLICKED:
-        // USER START (Optionally insert code for reacting on notification message)
-        // USER END
-        break;
-      case WM_NOTIFICATION_RELEASED:
-        // USER START (Optionally insert code for reacting on notification message)
-        // USER END
-        break;
-      case WM_NOTIFICATION_SEL_CHANGED:
-        // USER START (Optionally insert code for reacting on notification message)
-        // USER END
-        break;
-      // USER START (Optionally insert additional code for further notification handling)
-      // USER END
-      }
-      break;
-    // USER START (Optionally insert additional code for further Ids)
-    // USER END
-    }
     break;
   // USER START (Optionally insert additional message handling)
   // USER END
@@ -141,10 +104,10 @@ static void _cbDialog(WM_MESSAGE * pMsg) {
 */
 /*********************************************************************
 *
-*       CreateFramewin
+*       CreateFramewin1
 */
-WM_HWIN CreateFramewin(void);
-WM_HWIN CreateFramewin(void) {
+WM_HWIN CreateFramewin1(void);
+WM_HWIN CreateFramewin1(void) {
   WM_HWIN hWin;
 
   hWin = GUI_CreateDialogBox(_aDialogCreate, GUI_COUNTOF(_aDialogCreate), _cbDialog, WM_HBKWIN, 0, 0);
